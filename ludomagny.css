@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: 'butcherman_regular';
+    src: url('../assets/butcherman-regular-webfont.woff2') format('woff2'),
+         url('../assets/butcherman-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'luckiest_guyregular';
+    src: url('../assets/luckiestguy-regular-webfont.woff2') format('woff2'),
+         url('../assets/luckiestguy-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'mysteryquest_regular';
+    src: url('../assets/mysteryquest-regular-webfont.woff2') format('woff2'),
+         url('../assets/mysteryquest-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.creepy
+{
+    font-family: 'butcherman_regular'
+}
+
+.festive
+{
+    font-family: 'mysteryquest_regular'
+}
+
+.playful
+{
+    font-family: 'luckiest_guyregular'
+}
+
+.date-soiree.passee
+{
+    @apply opacity-35;
+}
+
+.date-soiree.prochaine
+{
+    @apply text-4xl;
+    @apply text-purple-600;
+    @apply opacity-100;
+}
+
+.date-soiree.a-venir
+{
+    @apply opacity-70;
+}
+/* 
+
+.swiper-slide {      
+    @apply opacity-0;
+}
+
+.swiper-slide.swiper-slide-prev {      
+    @apply opacity-15;
+}
+
+.swiper-slide.swiper-slide-active {      
+
+    @apply opacity-100;
+} */
+/* 
+.swiper-slide.swiper-slide-next {      
+    @apply opacity-20;
+}
+.swiper-pagination-bullet-active
+{
+    @apply bg-purple-600;
+} */
+
+.swiper-vertical :is(.swiper-button-next, .swiper-button-prev) {
+	left: 50%;
+	transform:  rotate(90deg) translateY(-50%);
+	transform-origin: left center;
+}
+.swiper-vertical .swiper-button-prev {
+    @apply text-purple-600;
+	top: calc(var(--swiper-navigation-size) / 2);
+}
+.swiper-vertical .swiper-button-next {
+    @apply text-purple-600;
+	top: auto;
+	bottom: calc(var(--swiper-navigation-size) / 2);
+}
