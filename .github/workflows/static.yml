@@ -29,8 +29,15 @@ jobs:
       uses: actions/checkout@v4
     - name: Setup node
       uses: actions/setup-node@v4
+    - name: Setup Pages
+      id: pages
+      uses: actions/configure-pages@v3
     - run: npm install -D tailwindcss @tailwindcss/forms @tailwindcss/typography
     - run: npx tailwindcss -i ./ludomagny.css -o ./public/css/ludomagny.css --minify
+    - name: Upload Artifact
+      uses: actions/upload-pages-artifact@v2
+      with:
+        path: './public/css/'
   deploy:
     needs: build
     environment:
