@@ -35,7 +35,7 @@ jobs:
     - run: npm install -D tailwindcss @tailwindcss/forms @tailwindcss/typography
     - run: npx tailwindcss -i ./ludomagny.css -o ./public/css/ludomagny.css --minify
     - name: Upload Artifact
-      uses: actions/upload-pages-artifact@v2
+      uses: actions/upload-pages-artifact@v3
       with:
         path: './public/css/'
   deploy:
