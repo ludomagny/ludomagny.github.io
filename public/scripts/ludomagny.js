@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", function(){
     for (const [index, element] of dateSoirees.entries()) {
 
         const slideDate = DateTime.fromFormat(element.textContent, "dd LLLL yyyy", { locale: "fr" });
-        const diff = slideDate.diff(currentDate, 'days').as('days');
+        const diff = slideDate.diff(currentDate, 'days').as('days')  << 0;// <<0 truncates float into int;
         diffs.push(diff);
-        if ((-1 < diff) && (diff < 0)) {
+        if (diff == 0) {
             element.classList.add("aujourdhui");
         } else if (diff > 0) {
             element.classList.add("a-venir");
