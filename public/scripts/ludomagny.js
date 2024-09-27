@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(){
 
     var DateTime = luxon.DateTime;
-    const currentDate = DateTime.now();
+    const currentDate = DateTime.local({ zone: "Europe/Paris" });
     // const currentDate = DateTime.fromISO('2024-11-02');
 
     const header = document.getElementById('header')
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function(){
         const slideDate = DateTime.fromFormat(element.textContent, "dd LLLL yyyy", { locale: "fr" });
         const diff = slideDate.diff(currentDate, 'days').as('days');
         diffs.push(diff);
-        if (diff == 0) {
+        if ((-1 < diff) && (diff < 0)) {
             element.classList.add("aujourdhui");
         } else if (diff > 0) {
             element.classList.add("a-venir");
